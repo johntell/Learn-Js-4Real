@@ -1,24 +1,33 @@
 import React, { Component } from 'react';
-import BGchange from 'background-color-changer';
-import BP from 'babel-polyfill';
-
-
+import 'babel-polyfill';
 
 export default class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "John da man"
+            word: "John da man",
+            date: new Date().toLocaleTimeString()
         },
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        BGchange(document.body, 20, 100)
+        this.callApi()
+        .then(res => this.setState({
+            date: res.express
+        }))
+        .catch(err => console.log(err));
     }
+
+    callApi = async () => {
+        const response = await fetch('/api/hello');
+        const body = await response.json();
+        return body;
+    };
+
     render () {
         return (
             <div onClick={this.handleClick}>Hello world!! {this.props.extraValue}
-                <p>Hello there {this.state.name}</p>
+                <p>Hello there {this.state.date}</p>
             </div>
         )        
     }

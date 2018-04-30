@@ -14,6 +14,12 @@ module.exports = {
     },
     devServer: {
         contentBase: parentDir,
+        proxy: {
+            "/api/*": {
+                target: "http://localhost:5000/",
+                secure: "false"
+            }
+        },
         historyApiFallback: true
     },
     module: {
@@ -22,7 +28,10 @@ module.exports = {
                 test: /\.js$/,
                 use: {
                     loader: "babel-loader",
-                    options: { presets: ["es2015"] }
+                    options: {
+                        presets: ["es2015"],
+                        plugins: ["transform-class-properties"]
+                    }
                 }
             },
             {

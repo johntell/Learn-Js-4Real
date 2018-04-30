@@ -1,0 +1,83 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\John\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Ruby24-x64\bin;C:\Users\John\AppData\Local\Microsoft\WindowsApps;C:\Users\John\AppData\Local\atom\bin;C:\Users\John\AppData\Roaming\npm;C:\Users\John\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\flutter\bin;
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.1
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "learnjs",
+    "version": "1.0.0",
+    "description": "Learning JS back- and front end",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "server": "nodemon server.js",
+      "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    },
+    "proxy": "https://localhost:5000/",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/johntell/Learn-Js-4Real.git"
+    },
+    "author": "John Tell",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/johntell/Learn-Js-4Real/issues"
+    },
+    "homepage": "https://github.com/johntell/Learn-Js-4Real#readme",
+    "dependencies": {
+      "babel-polyfill": "^6.26.0",
+      "background-color-changer": "^1.0.2",
+      "react": "^16.3.2",
+      "react-dom": "^16.3.2",
+      "webpack": "^4.6.0",
+      "webpack-cli": "2.1.0",
+      "webpack-dev-server": "^3.1.3",
+      "express": "^4.16.2"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.4",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-preset-es2015": "^6.24.1",
+      "babel-preset-react": "^6.24.1",
+      "babel-preset-stage-0": "^6.24.1",
+      "babel-register": "^6.26.0",
+      "css-loader": "^0.28.11",
+      "sass": "^1.3.0",
+      "sass-loader": "^7.0.1",
+      "style-loader": "^0.21.0",
+      "concurrently": "^3.5.0"
+    },
+    "babel": {
+      "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+      ],
+      "plugins": [
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\wamp\www\LearnJS\learn-js-4real\node_modules\babel-polyfill\node_modules\core-js'
